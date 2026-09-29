@@ -77,6 +77,7 @@ var Chrome_153_PSK = ClientProfile{
 					&tls.SCTExtension{},             // 18
 					&tls.ExtendedMasterSecretExtension{}, // 23
 					&tls.SessionTicketExtension{},   // 35
+					&tls.GenericExtension{Id: 0xca34, Data: chrome152TrustAnchors},
 					&tls.SupportedCurvesExtension{Curves: []tls.CurveID{ // 10
 						tls.GREASE_PLACEHOLDER,
 						tls.X25519MLKEM768,
@@ -97,7 +98,6 @@ var Chrome_153_PSK = ClientProfile{
 						tls.VersionTLS13,
 						tls.VersionTLS12,
 					}},
-					&tls.GenericExtension{Id: 0xca34, Data: chrome153TrustAnchors},
 					&tls.UtlsGREASEExtension{}, // 0xbaba slot
 					&tls.UtlsPreSharedKeyExtension{},
 				},
